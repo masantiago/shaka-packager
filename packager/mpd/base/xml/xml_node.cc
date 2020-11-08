@@ -420,7 +420,8 @@ bool RepresentationXmlNode::AddLiveOnlyInfo(
   if (media_info.has_segment_template_url()) {
     segment_template.SetStringAttribute("media",
                                         media_info.segment_template_url());
-    segment_template.SetIntegerAttribute("startNumber", start_number);
+    // HACK: startNumber field not needed in $Time profile
+    //segment_template.SetIntegerAttribute("startNumber", start_number);
   }
 
   if (!segment_infos.empty()) {
